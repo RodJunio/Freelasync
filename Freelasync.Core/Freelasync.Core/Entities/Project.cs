@@ -28,4 +28,10 @@ public class Project : BaseEntity
         Status = ProjectStatusEnum.Created;
     }
 
+    public void Cancel()
+    {
+        if (Status == ProjectStatusEnum.InProgress || Status == ProjectStatusEnum.Created)
+            Status = ProjectStatusEnum.Cancelled;
+    }
+
 }
